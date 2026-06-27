@@ -1,0 +1,71 @@
+{
+  "info": {
+    "name": "Baozi Store API - Erick Ramon 5021939",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Cliente - Criar",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"nome\": \"Erick Ramon Alves da Silveira e Silva5021939\",\n  \"clienteDesde\": \"2026-06-27\"\n}"},
+        "url": {"raw": "http://localhost:8080/clientes", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["clientes"]}
+      }
+    },
+    {
+      "name": "Cliente - Listar",
+      "request": {"method": "GET", "url": {"raw": "http://localhost:8080/clientes", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["clientes"]}}
+    },
+    {
+      "name": "Cliente - Consultar por ID",
+      "request": {"method": "GET", "url": {"raw": "http://localhost:8080/clientes/1", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["clientes", "1"]}}
+    },
+    {
+      "name": "Cliente - Excluir",
+      "request": {"method": "DELETE", "url": {"raw": "http://localhost:8080/clientes/1", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["clientes", "1"]}}
+    },
+    {
+      "name": "Produto - Criar",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"nome\": \"Baozi Tradicional de Carne Suína\",\n  \"preco\": 12.90,\n  \"estoque\": true\n}"},
+        "url": {"raw": "http://localhost:8080/produtos", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["produtos"]}
+      }
+    },
+    {
+      "name": "Produto - Listar",
+      "request": {"method": "GET", "url": {"raw": "http://localhost:8080/produtos", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["produtos"]}}
+    },
+    {
+      "name": "Produto - Consultar por ID",
+      "request": {"method": "GET", "url": {"raw": "http://localhost:8080/produtos/1", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["produtos", "1"]}}
+    },
+    {
+      "name": "Produto - Excluir",
+      "request": {"method": "DELETE", "url": {"raw": "http://localhost:8080/produtos/1", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["produtos", "1"]}}
+    },
+    {
+      "name": "Pedido - Criar",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {"mode": "raw", "raw": "{\n  \"clienteId\": 1,\n  \"produtoId\": 1,\n  \"quantidade\": 6\n}"},
+        "url": {"raw": "http://localhost:8080/pedidos", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["pedidos"]}
+      }
+    },
+    {
+      "name": "Pedido - Listar",
+      "request": {"method": "GET", "url": {"raw": "http://localhost:8080/pedidos", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["pedidos"]}}
+    },
+    {
+      "name": "Pedido - Consultar por ID",
+      "request": {"method": "GET", "url": {"raw": "http://localhost:8080/pedidos/1", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["pedidos", "1"]}}
+    },
+    {
+      "name": "Pedido - Excluir",
+      "request": {"method": "DELETE", "url": {"raw": "http://localhost:8080/pedidos/1", "protocol": "http", "host": ["localhost"], "port": "8080", "path": ["pedidos", "1"]}}
+    }
+  ]
+}

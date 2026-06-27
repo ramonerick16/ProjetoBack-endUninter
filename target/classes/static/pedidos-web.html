@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedidos - Baozi Store</title>
+  <link rel="stylesheet" href="/web-style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><img src="/images/logo.png" class="logo" alt="Logo"><div><h1>Baozi Store</h1><p>Registro de Pedidos</p></div></div>
+  <nav><a href="/">Início</a><a href="/clientes-web">Clientes</a><a href="/produtos-web">Produtos</a><a href="/pedidos-web">Pedidos</a></nav>
+</header>
+<main class="container">
+  <section class="card">
+    <h2>Cadastrar / Editar Pedido</h2>
+    <form id="formPedido" class="form-grid">
+      <input type="hidden" id="pedidoId">
+      <div><label>ID do Cliente</label><input id="clienteId" type="number" required value="1"></div>
+      <div><label>ID do Produto</label><input id="produtoId" type="number" required value="1"></div>
+      <div><label>Quantidade</label><input id="quantidade" type="number" required value="6"></div>
+      <div class="actions"><button type="submit">Salvar</button><button type="button" class="secondary" onclick="limparFormulario()">Limpar</button></div>
+    </form>
+  </section>
+  <section class="card info"><strong>Observação:</strong> para registrar pedido, cadastre primeiro o cliente e o produto. Use os IDs mostrados nas listas.</section>
+  <section class="card">
+    <div class="section-title"><h2>Lista de Pedidos</h2><a href="/pedidos" target="_blank">Ver JSON</a></div>
+    <table><thead><tr><th>ID</th><th>ID Cliente</th><th>ID Produto</th><th>Quantidade</th><th>Ações</th></tr></thead><tbody id="tabela"></tbody></table>
+  </section>
+</main>
+<footer>Erick Ramon Alves da Silveira e Silva - RU 5021939</footer>
+<script src="/pedidos-web.js"></script>
+</body>
+</html>

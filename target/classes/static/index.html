@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baozi Store - API REST</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="/images/logo.png" alt="Logo" class="logo" />
+      <div>
+        <h1>Baozi Store</h1>
+        <p>API REST - Desenvolvimento Web Back-End</p>
+      </div>
+    </div>
+    <div class="student">
+      <strong>Aluno:</strong> Erick Ramon Alves da Silveira e Silva<br />
+      <strong>RU:</strong> 5021939
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro card">
+      <h2>Painel de Demonstração</h2>
+      <p>
+        Interface complementar para cadastrar, listar, editar e excluir registros da API REST da Baozi Store.
+        Os endpoints continuam disponíveis em JSON para testes no Postman.
+      </p>
+      <div class="links">
+        <a href="/clientes-web">Clientes Web</a>
+        <a href="/produtos-web">Produtos Web</a>
+        <a href="/pedidos-web">Pedidos Web</a>
+        <a href="/clientes" target="_blank">GET /clientes</a>
+        <a href="/produtos" target="_blank">GET /produtos</a>
+        <a href="/pedidos" target="_blank">GET /pedidos</a>
+        <a href="/h2-console" target="_blank">H2 Console</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Cadastro de Cliente</h2>
+        <form id="clienteForm">
+          <input type="hidden" id="clienteId" />
+          <label>Nome do cliente</label>
+          <input id="clienteNome" type="text" value="Erick Ramon Alves da Silveira e Silva5021939" required />
+          <label>Cliente desde</label>
+          <input id="clienteDesde" type="date" required />
+          <button type="submit">Salvar cliente</button>
+          <button type="button" class="secondary" onclick="limparCliente()">Limpar</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Cadastro de Produto</h2>
+        <form id="produtoForm">
+          <input type="hidden" id="produtoId" />
+          <label>Nome do produto</label>
+          <input id="produtoNome" type="text" value="Baozi Tradicional de Carne Suína" required />
+          <label>Preço</label>
+          <input id="produtoPreco" type="number" step="0.01" value="12.90" required />
+          <label class="check"><input id="produtoEstoque" type="checkbox" checked /> Produto em estoque</label>
+          <button type="submit">Salvar produto</button>
+          <button type="button" class="secondary" onclick="limparProduto()">Limpar</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Registro de Pedido</h2>
+        <form id="pedidoForm">
+          <input type="hidden" id="pedidoId" />
+          <label>ID do cliente</label>
+          <input id="pedidoClienteId" type="number" value="1" required />
+          <label>ID do produto</label>
+          <input id="pedidoProdutoId" type="number" value="1" required />
+          <label>Quantidade</label>
+          <input id="pedidoQuantidade" type="number" value="6" required />
+          <button type="submit">Salvar pedido</button>
+          <button type="button" class="secondary" onclick="limparPedido()">Limpar</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="card table-card">
+      <h2>Lista de Clientes</h2>
+      <table>
+        <thead><tr><th>ID</th><th>Nome</th><th>Cliente desde</th><th>Ações</th></tr></thead>
+        <tbody id="clientesTabela"></tbody>
+      </table>
+    </section>
+
+    <section class="card table-card">
+      <h2>Lista de Produtos</h2>
+      <table>
+        <thead><tr><th>ID</th><th>Nome</th><th>Preço</th><th>Estoque</th><th>Ações</th></tr></thead>
+        <tbody id="produtosTabela"></tbody>
+      </table>
+    </section>
+
+    <section class="card table-card">
+      <h2>Lista de Pedidos</h2>
+      <table>
+        <thead><tr><th>ID</th><th>ID Cliente</th><th>ID Produto</th><th>Quantidade</th><th>Ações</th></tr></thead>
+        <tbody id="pedidosTabela"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    Baozi Store API REST - Projeto acadêmico - Erick Ramon Alves da Silveira e Silva5021939
+  </footer>
+  <script src="/app.js"></script>
+</body>
+</html>

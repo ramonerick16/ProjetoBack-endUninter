@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clientes - Baozi Store</title>
+  <link rel="stylesheet" href="/web-style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><img src="/images/logo.png" class="logo" alt="Logo"><div><h1>Baozi Store</h1><p>Cadastro de Clientes</p></div></div>
+  <nav><a href="/">Início</a><a href="/clientes-web">Clientes</a><a href="/produtos-web">Produtos</a><a href="/pedidos-web">Pedidos</a></nav>
+</header>
+<main class="container">
+  <section class="card">
+    <h2>Cadastrar / Editar Cliente</h2>
+    <form id="formCliente" class="form-grid">
+      <input type="hidden" id="clienteId">
+      <div><label>Nome</label><input id="nome" required value="Erick Ramon Alves da Silveira e Silva5021939"></div>
+      <div><label>Cliente desde</label><input id="clienteDesde" type="date" required></div>
+      <div class="actions"><button type="submit">Salvar</button><button type="button" class="secondary" onclick="limparFormulario()">Limpar</button></div>
+    </form>
+  </section>
+  <section class="card">
+    <div class="section-title"><h2>Lista de Clientes</h2><a href="/clientes" target="_blank">Ver JSON</a></div>
+    <table><thead><tr><th>ID</th><th>Nome</th><th>Cliente desde</th><th>Ações</th></tr></thead><tbody id="tabela"></tbody></table>
+  </section>
+</main>
+<footer>Erick Ramon Alves da Silveira e Silva - RU 5021939</footer>
+<script src="/clientes-web.js"></script>
+</body>
+</html>

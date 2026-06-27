@@ -1,0 +1,7 @@
+document.addEventListener('DOMContentLoaded',listar);
+async function req(url,opt={}){const r=await fetch(url,{headers:{'Content-Type':'application/json'},...opt}); if(!r.ok) throw new Error(await r.text()); return r.status===204?null:r.json();}
+async function listar(){const dados=await req('/pedidos'); document.getElementById('tabela').innerHTML=dados.map(p=>`<tr><td>${p.id}</td><td>${p.clienteId}</td><td>${p.produtoId}</td><td>${p.quantidade}</td><td><button class="edit" onclick='editar(${JSON.stringify(p)})'>Editar</button> <button class="danger" onclick="excluir(${p.id})">Excluir</button></td></tr>`).join('');}
+document.getElementById('formPedido').addEventListener('submit',async e=>{e.preventDefault(); const id=pedidoId.value; const body={clienteId:Number(clienteId.value),produtoId:Number(produtoId.value),quantidade:Number(quantidade.value)}; try{await req(id?`/pedidos/${id}`:'/pedidos',{method:id?'PUT':'POST',body:JSON.stringify(body)}); limparFormulario(); listar();}catch(err){alert('Erro: '+err.message);}});
+function editar(p){pedidoId.value=p.id; clienteId.value=p.clienteId; produtoId.value=p.produtoId; quantidade.value=p.quantidade; scrollTo({top:0,behavior:'smooth'});}
+function limparFormulario(){pedidoId.value=''; clienteId.value='1'; produtoId.value='1'; quantidade.value='6';}
+async function excluir(id){if(confirm('Excluir pedido?')){await req(`/pedidos/${id}`,{method:'DELETE'}); listar();}}
